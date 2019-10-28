@@ -1,0 +1,19 @@
+{
+  "name": "react_contact_keeper",
+  "version": "1.0.0",
+  "description": "This is the package.json of the Contact Keeper App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmL01/react_contact_keeper.git"
+  },
+  "author": "EmL01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmL01/react_contact_keeper/issues"
+  },
+  "homepage": "https://github.com/EmL01/react_contact_keeper#readme"
+}
