@@ -1,7 +1,8 @@
 const express = require('express'),
     app = express(),
     PORT = process.env.PORT || 5000,
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    path = require('path');
 
 //Connect to DB
 mongoose.connect('mongodb://localhost:27017/contact_keeper', {
@@ -25,6 +26,11 @@ app.use(express.json({
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/contacts', require('./routes/contacts'));
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
+}
 
 //Listen to port PORT in .env or 5000 by default
 app.listen(PORT, (req, res) => {
